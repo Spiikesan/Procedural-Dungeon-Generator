@@ -32,3 +32,6 @@
 *.app
 genmap
 
+#generated files
+*.bmp
+*.gif
