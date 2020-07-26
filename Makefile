@@ -23,7 +23,6 @@ SRCS		= main.cpp \
 		  Canvas.cpp \
 		  Color.cpp \
 		  Square.cpp \
-		  Random.cpp \
 		  Generate.cpp \
 		  Triangle.cpp \
 		  Util.cpp \

@@ -1,5 +1,5 @@
 #ifndef TRIANGLE_H_
-# define TRIANGLE_H_
+#define TRIANGLE_H_
 
 #include <math.h>
 #include "GObject.hh"

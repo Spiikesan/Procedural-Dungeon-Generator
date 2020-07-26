@@ -7,19 +7,18 @@ float Util::quatCross(float a, float b, float c)
 
 float Util::f_rsqrt(float number)
 {
-  union u_u
-  {
-      long	i;
-      double	y;
+  union u_u {
+    long i;
+    double y;
   } u;
 
   float x2;
   const float threehalfs = 1.5F;
 
   x2 = number * 0.5F;
-  u.y  = number;
-  u.i  = 0x5fe6ec85e7de30da - ( u.i >> 1 ); // what the fuck?
-  return (u.y * ( threehalfs - (x2 * u.y * u.y ) ));
+  u.y = number;
+  u.i = 0x5fe6ec85e7de30da - (u.i >> 1); // what the fuck?
+  return (u.y * (threehalfs - (x2 * u.y * u.y)));
 }
 
 float Util::crossProduct(const Point &p1, const Point &p2, const Point &p3)
@@ -33,3 +32,10 @@ bool Util::isFlatAngle(const Point &p1, const Point &p2, const Point &p3)
 {
   return (Util::crossProduct(p1, p2, p3));
 }
+
+
+double Util::round(double number, double increment, double offset)
+{
+  return ::round((number - offset) / increment ) * increment + offset;
+}
+

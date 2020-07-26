@@ -1,5 +1,5 @@
 #ifndef CANVAS_HH_
-# define CANVAS_HH_
+#define CANVAS_HH_
 
 #include <vector>
 #include <algorithm>
@@ -42,6 +42,7 @@ private:
   std::vector<Buffer> circles;
 
   const Canvas &operator=(const Canvas &other) = delete;
+
 public:
   explicit Canvas();
   ~Canvas();

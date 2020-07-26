@@ -1,17 +1,17 @@
 #include "Point.hh"
 
 Point::Point()
-  : GObject(), x(0.0), y(0.0)
+    : GObject(), x(0.0), y(0.0)
 {
 }
 
-Point::Point (const Point &other)
-  : GObject(other), x(other.x), y(other.y)
+Point::Point(const Point &other)
+    : GObject(other), x(other.x), y(other.y)
 {
 }
 
 Point::Point(float _x, float _y)
-  : GObject(), x(_x), y(_y)
+    : GObject(), x(_x), y(_y)
 {
 }
 
@@ -21,8 +21,9 @@ Point::~Point()
 
 Point &Point::normalize()
 {
-  float  inv_nor = Util::f_rsqrt(length2());
-  if (inv_nor) {
+  float inv_nor = Util::f_rsqrt(length2());
+  if (inv_nor)
+  {
     operator*=(inv_nor);
   }
   return (*this);
@@ -66,7 +67,7 @@ const Point &Point::clamp(const Point &p, const Point &min, const Point &max)
 float Point::dist2(const Point &a, const Point &b)
 {
   float abx = (a.x - b.x);
-  float aby =  (a.y - b.y);
+  float aby = (a.y - b.y);
   return abx * abx + aby * aby;
 }
 
@@ -77,7 +78,8 @@ float Point::dist(const Point &a, const Point &b)
 
 const Point &Point::operator=(const Point &other)
 {
-  if (*this != other) {
+  if (*this != other)
+  {
     GObject::operator=(other);
     x = other.x;
     y = other.y;
@@ -149,43 +151,43 @@ Point operator+(const Point &a, const Point &b)
 
 Point operator+(const Point &a, float b)
 {
-  Point	r(a);
+  Point r(a);
   return (r += b);
 }
 
 Point operator-(const Point &a, const Point &b)
 {
-  Point	r(a);
+  Point r(a);
   return (r -= b);
 }
 
 Point operator-(const Point &a, float b)
 {
-  Point	r(a);
+  Point r(a);
   return (r -= b);
 }
 
 Point operator*(const Point &a, const Point &b)
 {
-  Point	r(a);
+  Point r(a);
   return (r *= b);
 }
 
 Point operator*(const Point &a, float b)
 {
-  Point	r(a);
+  Point r(a);
   return (r *= b);
 }
 
 Point operator/(const Point &a, const Point &b)
 {
-  Point	r(a);
+  Point r(a);
   return (r /= b);
 }
 
 Point operator/(const Point &a, float b)
 {
-  Point	r(a);
+  Point r(a);
   return (r /= b);
 }
 

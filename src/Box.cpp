@@ -1,26 +1,23 @@
 #include "Box.hh"
+#include "Util.hh"
 
 Box::Box()
-  : x(0), y(0), width(0), height(0)
-  {
-
-  }
+    : x(0), y(0), width(0), height(0)
+{
+}
 
 Box::Box(const Box &other)
-  : x(other.x), y(other.y), width(other.width), height(other.height)
-  {
-
-  }
+    : x(other.x), y(other.y), width(other.width), height(other.height)
+{
+}
 
 Box::Box(float _x, float _y, float _width, float _height)
-  : x(_x), y(_y), width(_width), height(_height)
+    : x(_x), y(_y), width(_width), height(_height)
 {
-
 }
 
 Box::~Box()
 {
-
 }
 
 Box &Box::operator=(const Box &other)
@@ -37,11 +34,11 @@ Box &Box::operator=(const Box &other)
 
 bool Box::collision(const Box &other) const
 {
-    return (this != &other &&
-	    left() < other.right() &&
-	    other.left() < right() &&
-            top() < other.bottom() &&
-            other.top() < bottom());
+  return (this != &other &&
+          left() < other.right() &&
+          other.left() < right() &&
+          top() < other.bottom() &&
+          other.top() < bottom());
 }
 
 bool Box::collision(const Edge &other) const
@@ -61,16 +58,20 @@ bool Box::collision(const Edge &other) const
     return (true);
   float m = (other.p2.y - other.p1.y) / (other.p2.x - other.p1.x);
   float y = m * (_left - other.p1.x) + other.p1.y;
-  if (y > _top && y < _bottom) return (true);
+  if (y > _top && y < _bottom)
+    return (true);
 
   y = m * (_bottom - other.p1.x) + other.p1.y;
-  if (y > _top && y < _bottom) return (true);
+  if (y > _top && y < _bottom)
+    return (true);
 
   float x = (_top - other.p1.y) / m + other.p1.x;
-  if (x > _left && x < _right) return (true);
+  if (x > _left && x < _right)
+    return (true);
 
   x = (_top - other.p1.y) / m + other.p1.x;
-  if (x > _left && x < _right) return (true);
+  if (x > _left && x < _right)
+    return (true);
 
   return (false);
 }
@@ -78,11 +79,13 @@ bool Box::collision(const Edge &other) const
 void Box::moveContact(const Box &other, const Point &dir)
 {
   if (left() < other.right() ||
-      other.left() < right()) {
+      other.left() < right())
+  {
     x += dir.x;
   }
   if (top() < other.bottom() ||
-      other.top() < bottom()) {
+      other.top() < bottom())
+  {
     y += dir.y;
   }
 }

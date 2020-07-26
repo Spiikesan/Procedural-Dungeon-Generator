@@ -1,5 +1,5 @@
 #ifndef _BOX_HH_
-# define _BOX_HH_
+#define _BOX_HH_
 
 #include "Edge.hh"
 
@@ -17,7 +17,7 @@ struct Box
   Box &operator=(const Box &other);
   bool collision(const Box &other) const;
   bool collision(const Edge &other) const;
-  void	moveContact(const Box &other, const Point &dir);
+  void moveContact(const Box &other, const Point &dir);
   float left() const;
   float top() const;
   float right() const;

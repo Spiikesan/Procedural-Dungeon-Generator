@@ -1,26 +1,22 @@
 #include "Square.hh"
 
 Square::Square()
-: GObject(), box()
+    : GObject(), box()
 {
-
 }
 
 Square::Square(float x, float y, float width, float height)
-  : GObject(), box(x, y, width, height)
+    : GObject(), box(x, y, width, height)
 {
-
 }
 
 Square::Square(const Square &other)
-: GObject(other), box(other.box)
+    : GObject(other), box(other.box)
 {
-
 }
 
 Square::~Square()
 {
-
 }
 
 const Square &Square::operator=(const Square &other)

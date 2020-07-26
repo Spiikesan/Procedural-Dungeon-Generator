@@ -1,5 +1,5 @@
 #ifndef SHADER_HH_
-# define SHADER_HH_
+#define SHADER_HH_
 
 #include <string>
 #include <fstream>
@@ -18,8 +18,9 @@ private:
   GLuint program;
   GLuint textureID;
   char *source;
-  char* loadSource(const char *filename);
-  unsigned long getFileLength(std::ifstream& file);
+  char *loadSource(const char *filename);
+  unsigned long getFileLength(std::ifstream &file);
+
 public:
   Shader() = default;
   Shader(const Shader &other);

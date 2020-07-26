@@ -1,21 +1,19 @@
 #include "Circle.hh"
+#include "Util.hh"
 
 Circle::Circle()
-: GObject(), center(), radius(0)
+    : GObject(), center(), radius(0)
 {
-
 }
 
 Circle::Circle(const Point &_center, float _radius)
-: GObject(), center(_center), radius(_radius)
+    : GObject(), center(_center), radius(_radius)
 {
-
 }
 
 Circle::Circle(const Circle &other)
-: GObject(other), center(other.center), radius(other.radius)
+    : GObject(other), center(other.center), radius(other.radius)
 {
-
 }
 
 const Circle &Circle::operator=(const Circle &other)

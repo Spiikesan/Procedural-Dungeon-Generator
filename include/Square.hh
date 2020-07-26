@@ -1,5 +1,5 @@
 #ifndef SQUARE_HH_
-# define SQUARE_HH_
+#define SQUARE_HH_
 
 #include "GObject.hh"
 #include "Box.hh"

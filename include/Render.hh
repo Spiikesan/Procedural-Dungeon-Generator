@@ -1,5 +1,5 @@
 #ifndef _RENDER_HH_
-# define _RENDER_HH_
+#define _RENDER_HH_
 
 #include <string>
 #include <cstring>
@@ -19,11 +19,13 @@ private:
   Shader shader;
   GLuint fbo;
   GLuint render_buf;
+
 private:
   Render() = default;
   Render(const Render &other) = delete;
   Render &operator=(const Render &other) = delete;
   void init(int ac, char **av);
+
 public:
   GLuint id;
   Render(int argc, char *argv[]);

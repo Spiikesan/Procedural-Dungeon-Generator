@@ -1,22 +1,21 @@
 #include "Triangle.hh"
 
 Triangle::Triangle()
-: GObject(), p1(), p2(), p3(), e1(p1, p2), e2(p2, p3), e3(p3, p1)
+    : GObject(), p1(), p2(), p3(), e1(p1, p2), e2(p2, p3), e3(p3, p1)
 {
   c = Circle(getCircumCenter(), getCircumRadius());
 }
 
 Triangle::Triangle(const Point &_p1, const Point &_p2, const Point &_p3)
-  : GObject(), p1(_p1), p2(_p2), p3(_p3), e1(p1, p2), e2(p2, p3), e3(p3, p1)
+    : GObject(), p1(_p1), p2(_p2), p3(_p3), e1(p1, p2), e2(p2, p3), e3(p3, p1)
 {
   c = Circle(getCircumCenter(), getCircumRadius());
 }
 
 Triangle::Triangle(const Triangle &other)
-: GObject(other), p1(other.p1), p2(other.p2), p3(other.p3),
-  e1(other.e1), e2(other.e2), e3(other.e3), c(other.c)
+    : GObject(other), p1(other.p1), p2(other.p2), p3(other.p3),
+      e1(other.e1), e2(other.e2), e3(other.e3), c(other.c)
 {
-
 }
 
 const Triangle &Triangle::operator=(const Triangle &other)
@@ -37,7 +36,6 @@ const Triangle &Triangle::operator=(const Triangle &other)
 
 Triangle::~Triangle()
 {
-
 }
 
 bool Triangle::isCW() const
@@ -69,7 +67,7 @@ Point Triangle::getCircumCenter() const
   float lenB2 = p2.length2();
   float lenC2 = p3.length2();
 
-  float D =  (p1.x * P3P2.y + p2.x * P1P3.y + p3.x * P2P1.y) * 2.0;
+  float D = (p1.x * P3P2.y + p2.x * P1P3.y + p3.x * P2P1.y) * 2.0;
   float x = lenA2 * P3P2.y + lenB2 * P1P3.y + lenC2 * P2P1.y;
   float y = lenA2 * P3P2.x + lenB2 * P1P3.x + lenC2 * P2P1.x;
   return Point((x / D), (y / D));
@@ -96,6 +94,7 @@ bool Triangle::isAtRightCircumCircle(const Point &pts) const
 
 std::ostream &operator<<(std::ostream &os, const Triangle &other)
 {
-  os << "{(" << other.p1 << ")" << "; (" << other.p2 << "); (" << other.p3 << ")}";
+  os << "{(" << other.p1 << ")"
+     << "; (" << other.p2 << "); (" << other.p3 << ")}";
   return (os);
 }

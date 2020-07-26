@@ -1,5 +1,5 @@
 #ifndef GOBJECT_HH_
-# define GOBJECT_HH_
+#define GOBJECT_HH_
 
 struct GObject
 {

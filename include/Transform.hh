@@ -1,5 +1,5 @@
 #ifndef TRANSFORM_HH_
-# define TRANSFORM_HH_
+#define TRANSFORM_HH_
 
 #include "Square.hh"
 #include <vector>
@@ -13,6 +13,7 @@ private:
   ~Transform() = delete;
   const Transform &operator=(const Transform &other) = delete;
   static bool avoidCollision(Square &a, Square &b);
+
 public:
   static void scatter(std::vector<Square> &squares, std::function<void(void)> func);
 };
